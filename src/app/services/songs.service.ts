@@ -13,4 +13,8 @@ export class SongsService {
   getAll() {
     return this.http.get<Song[]>(this.baseUrl);
   }
+
+  get(id: string) {
+    return this.http.get<Song>(this.baseUrl + '/' + id);
+  }
 }

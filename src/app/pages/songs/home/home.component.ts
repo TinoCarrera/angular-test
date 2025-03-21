@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SongsService } from '../../../services/songs.service';
 import { Song } from '../../../models/song.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
