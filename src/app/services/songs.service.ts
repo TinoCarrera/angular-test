@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Song } from '../models/song.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,6 @@ export class SongsService {
   private http = inject(HttpClient);
 
   getAll() {
-    return this.http.get<any>(this.baseUrl);
+    return this.http.get<Song[]>(this.baseUrl);
   }
 }

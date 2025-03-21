@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SongsService } from '../../../services/songs.service';
+import { Song } from '../../../models/song.model';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,12 @@ import { SongsService } from '../../../services/songs.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  songs?: Song[];
   private songsService = inject(SongsService);
 
   ngOnInit() {
-    this.songsService.getAll().subscribe((data) => {
-      console.log(data);
+    this.songsService.getAll().subscribe((songs) => {
+      this.songs = songs;
     });
   }
 }
