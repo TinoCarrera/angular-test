@@ -12,7 +12,7 @@ export class BaseService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
-  get(id: string) {
+  get(id: string | number) {
     return this.http.get<any>(this.baseUrl + '/' + id);
   }
 }
