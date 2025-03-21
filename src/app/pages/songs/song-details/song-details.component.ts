@@ -22,6 +22,10 @@ export class SongDetailsComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
+    this.getSong(id);
+  }
+
+  getSong(id: string) {
     this.songsService.get(id).subscribe((song) => {
       this.song = song;
       this.getArtist();

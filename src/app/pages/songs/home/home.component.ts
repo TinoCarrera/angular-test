@@ -12,9 +12,14 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   songs?: Song[];
+
   private songsService = inject(SongsService);
 
   ngOnInit() {
+    this.getSongs();
+  }
+
+  getSongs() {
     this.songsService.getAll().subscribe((songs: Song[]) => {
       this.songs = songs;
     });
