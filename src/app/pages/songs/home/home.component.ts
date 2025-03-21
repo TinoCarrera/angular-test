@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   private songsService = inject(SongsService);
 
   ngOnInit() {
-    this.songsService.getAll().subscribe((songs) => {
+    this.songsService.getAll().subscribe((songs: Song[]) => {
       this.songs = songs;
     });
   }
