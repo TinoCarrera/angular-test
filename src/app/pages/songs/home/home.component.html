@@ -2,7 +2,7 @@
 
 @for (song of songs; track song.id) {
   <div class="card">
-    <p>{{ song.title }} ({{ song.artist }})</p>
+    <p>{{ song.title }} ({{ getArtist(song.artist).name }})</p>
     <a [routerLink]="['/songs/', song.id]">Ver</a>
   </div>
 }
