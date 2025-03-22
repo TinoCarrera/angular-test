@@ -1,8 +1,13 @@
 <p>Canciones</p>
 
 @for (song of songs; track song.id) {
-  <div class="card">
+  <div [routerLink]="['/songs/', song.id]" class="card">
     <p>{{ song.title }} ({{ getArtist(song.artist).name }})</p>
-    <a [routerLink]="['/songs/', song.id]">Ver</a>
+
+    <p>
+      @for (genre of song.genre; track genre) {
+        # {{ genre }}
+      }
+    </p>
   </div>
 }
