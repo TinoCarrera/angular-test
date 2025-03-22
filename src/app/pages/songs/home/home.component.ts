@@ -3,13 +3,12 @@ import { SongsService } from '../../../services/songs.service';
 import { Song } from '../../../models/song.model';
 import { RouterLink } from '@angular/router';
 import { ArtistsService } from '../../../services/artists.service';
-import { CommonModule } from '@angular/common';
 import { Artist } from '../../../models/artist.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
