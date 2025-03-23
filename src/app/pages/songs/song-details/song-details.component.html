@@ -1,5 +1,27 @@
-@if (song) {
-  <p>{{ song.title }} ({{ artist?.name }})</p>
+@if (song && artist) {
+  <p>{{ song.title }} ({{ artist.name }})</p>
+
+  <p>
+    @for (genre of song.genre; track genre) {
+      # {{ genre }}
+    }
+  </p>
+
+  <p>Género:</p>
+
+  @for (genre of song.genre; track genre) {
+    {{ genre }}
+  }
+
+  <p>Compañía discográfica</p>
+  <p>compañia</p>
+
+
+  <p>Año</p>
+  <p>{{ song.year }}</p>
+
+  <button (click)="editSong()">Editar</button>
+  <button (click)="removeSong()">Eliminar</button>
 }
 
 @if (loading) {
