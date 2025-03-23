@@ -1,14 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SongsService } from '../../../services/songs.service';
 import { Song } from '../../../models/song.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArtistsService } from '../../../services/artists.service';
 import { Artist } from '../../../models/artist.model';
 
 @Component({
   selector: 'app-song-details',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './song-details.component.html',
   styleUrl: './song-details.component.scss'
 })
