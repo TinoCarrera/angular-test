@@ -1,16 +1,28 @@
 <p>Canciones</p>
 
-@for (song of songs; track song.id) {
-  <div [routerLink]="['/songs/', song.id]" class="card">
-    <p>{{ song.title }} ({{ getArtist(song.artist).name }})</p>
+<div class="container-fluid">
+  <div class="row">
+    @for (song of songs; track song.id) {
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="height: 350px;">
+          <div [routerLink]="['/songs/', song.id]" class="card-body">
+            <h5 class="card-title">
+              {{ song.title }} ({{ getArtist(song.artist).name }})
+            </h5>
 
-    <p>
-      @for (genre of song.genre; track genre) {
-        # {{ genre }}
-      }
-    </p>
+            <img [src]="song.poster" class="card-img" alt="" height="200" />
+
+            <p class="card-text">
+              @for (genre of song.genre; track genre) {
+                <span class="me-3"># {{ genre }}</span>
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    }
   </div>
-}
+</div>
 
 <button [routerLink]="['/songs/add']">añadir</button>
 
