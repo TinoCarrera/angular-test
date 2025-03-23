@@ -15,6 +15,8 @@ import { Artist } from '../../../models/artist.model';
 export class SongDetailsComponent implements OnInit {
   song?: Song;
   artist?: Artist;
+  loading = true;
+  error = false;
 
   private route = inject(ActivatedRoute);
   private songsService = inject(SongsService);
@@ -26,15 +28,28 @@ export class SongDetailsComponent implements OnInit {
   }
 
   getSong(id: string) {
-    this.songsService.get(id).subscribe((song) => {
-      this.song = song;
-      this.getArtist();
+    this.songsService.get(id).subscribe({
+      next: (song: Song) => {
+        this.song = song;
+        this.getArtist();
+      },
+      error: () => {
+        this.loading = false;
+        this.error = true;
+      }
     });
   }
 
   getArtist() {
-    this.artistService.get(this.song!.artist).subscribe((artist: Artist) => {
-      this.artist = artist;
+    this.artistService.get(this.song!.artist).subscribe({
+      next: (artist: Artist) => {
+        this.artist = artist;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+        this.error = true;
+      }
     });
   }
 }

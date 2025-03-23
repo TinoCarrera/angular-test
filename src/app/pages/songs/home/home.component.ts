@@ -15,6 +15,8 @@ import { Artist } from '../../../models/artist.model';
 export class HomeComponent implements OnInit {
   songs: Song[] = [];
   artists: Artist[] = [];
+  loading = true;
+  error = false;
 
   private songsService = inject(SongsService);
   private artistService = inject(ArtistsService);
@@ -24,15 +26,28 @@ export class HomeComponent implements OnInit {
   }
 
   getSongs() {
-    this.songsService.getAll().subscribe((songs: Song[]) => {
-      this.songs = songs;
+    this.songsService.getAll().subscribe({
+      next: (songs: Song[]) => {
+        this.songs = songs;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+        this.error = true;
+      }
     });
   }
 
   getArtists() {
-    this.artistService.getAll().subscribe((artists: Artist[]) => {
-      this.artists = artists;
-      this.getSongs();
+    this.artistService.getAll().subscribe({
+      next: (artists: Artist[]) => {
+        this.artists = artists;
+        this.getSongs();
+      },
+      error: () => {
+        this.loading = false;
+        this.error = true;
+      }
     });
   }
 
