@@ -22,9 +22,13 @@
       </div>
     }
   </div>
-</div>
 
-<button [routerLink]="['/songs/add']">añadir</button>
+  <span class="fixed-bottom-right m-3">
+    <button class="btn btn-outline-secondary rounded-circle p-2" [routerLink]="['/songs/add']">
+      <img src="/assets/icons/add.svg" alt="">
+    </button>
+  </span>
+</div>
 
 @if (loading) {
   <p>Cargando...</p>
