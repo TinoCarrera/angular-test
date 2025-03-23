@@ -13,10 +13,6 @@ export const routes: Routes = [
     component: SongAddComponent
   },
   {
-    path: 'edit/:id',
-    component: SongAddComponent
-  },
-  {
     path: ':id',
     component: SongDetailsComponent
   },

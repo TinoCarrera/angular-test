@@ -52,12 +52,4 @@ export class SongDetailsComponent implements OnInit {
       }
     });
   }
-
-  editSong() {
-    console.log('editar');
-  }
-
-  removeSong() {
-    console.log('remover');
-  }
 }

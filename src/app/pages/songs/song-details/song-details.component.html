@@ -22,8 +22,8 @@
   <p>Año</p>
   <p>{{ song.year }}</p>
 
-  <button [routerLink]="['/songs/edit', song.id]">Editar</button>
-  <button (click)="removeSong()">Eliminar</button>
+  <button>Editar</button>
+  <button>Eliminar</button>
 }
 
 @if (loading) {
