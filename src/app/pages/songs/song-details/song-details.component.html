@@ -22,7 +22,7 @@
   <p>Año</p>
   <p>{{ song.year }}</p>
 
-  <button (click)="editSong()">Editar</button>
+  <button [routerLink]="['/songs/edit', song.id]">Editar</button>
   <button (click)="removeSong()">Eliminar</button>
 }
 

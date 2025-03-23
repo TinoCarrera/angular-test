@@ -1,3 +1,7 @@
 <button [routerLink]="['/']">volver</button>
 
-<p>Nueva canción</p>
+@if (songId) {
+  <p>Editar canción</p>
+} @else {
+  <p>Nueva canción</p>
+}
