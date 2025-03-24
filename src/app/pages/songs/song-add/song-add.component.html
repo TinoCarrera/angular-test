@@ -1,8 +1,14 @@
-<button [routerLink]="['/']">volver</button>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container-fluid justify-content-start">
+    <button [routerLink]="['/']" class="btn me-3">
+      <img src="/assets/icons/arrow_back.svg" alt="">
+    </button>
 
-<p>Nueva canción</p>
+    <span class="navbar-brand">Nueva canción</span>
+  </div>
+</nav>
 
-<form>
+<form class="mt-5">
   <label for="title">Título</label>
   <br />
   <input id="title" placeholder="Indique el título de la canción" />

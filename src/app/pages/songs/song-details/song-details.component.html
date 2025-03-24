@@ -1,29 +1,41 @@
-<button [routerLink]="['/']">volver</button>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container-fluid justify-content-start">
+    <button [routerLink]="['/']" class="btn me-3">
+      <img src="/assets/icons/arrow_back.svg" alt="">
+    </button>
+
+    @if (song && artist) {
+      <span class="navbar-brand">{{ song.title }} ({{ artist.name }})</span>
+    }
+  </div>
+</nav>
 
 @if (song && artist) {
-  <p>{{ song.title }} ({{ artist.name }})</p>
+  <div class="container-fluid mt-5">
+    <p>{{ song.title }} ({{ artist.name }})</p>
 
-  <p>
+    <p>
+      @for (genre of song.genre; track genre) {
+        # {{ genre }}
+      }
+    </p>
+
+    <p>Género:</p>
+
     @for (genre of song.genre; track genre) {
-      # {{ genre }}
+      {{ genre }}
     }
-  </p>
 
-  <p>Género:</p>
-
-  @for (genre of song.genre; track genre) {
-    {{ genre }}
-  }
-
-  <p>Compañía discográfica</p>
-  <p>compañia</p>
+    <p>Compañía discográfica</p>
+    <p>compañia</p>
 
 
-  <p>Año</p>
-  <p>{{ song.year }}</p>
+    <p>Año</p>
+    <p>{{ song.year }}</p>
 
-  <button>Editar</button>
-  <button>Eliminar</button>
+    <button>Editar</button>
+    <button>Eliminar</button>
+  </div>
 }
 
 @if (loading) {
