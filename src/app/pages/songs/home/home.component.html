@@ -1,6 +1,6 @@
 <p>Canciones</p>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+<nav class="navbar fixed-top navbar-light bg-light border-bottom">
   <div class="container-fluid justify-content-start">
     <button class="btn me-3">
       <img src="/assets/icons/menu.svg" alt="">
@@ -37,11 +37,14 @@
     }
   </div>
 
-  <span class="position-fixed bottom-0 end-0 mb-3 me-3">
-    <button class="btn btn-outline-secondary rounded-circle p-2" [routerLink]="['/songs/add']">
-      <img src="/assets/icons/add.svg" alt="">
+  <div class="position-fixed bottom-0 end-0 mb-3 me-3">
+    <button
+      class="btn btn-light rounded-circle border border-2 p-2"
+      [routerLink]="['/songs/add']"
+    >
+      <img src="/assets/icons/add.svg" alt="" />
     </button>
-  </span>
+  </div>
 </div>
 
 @if (loading) {
