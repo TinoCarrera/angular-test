@@ -4,11 +4,12 @@ import { Song } from '../../../models/song.model';
 import { RouterLink } from '@angular/router';
 import { ArtistsService } from '../../../services/artists.service';
 import { Artist } from '../../../models/artist.model';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NgOptimizedImage],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
