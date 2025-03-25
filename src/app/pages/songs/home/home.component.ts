@@ -5,11 +5,12 @@ import { RouterLink } from '@angular/router';
 import { ArtistsService } from '../../../services/artists.service';
 import { Artist } from '../../../models/artist.model';
 import { NgOptimizedImage } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, NgOptimizedImage],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
