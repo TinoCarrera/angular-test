@@ -37,7 +37,7 @@
     }
 
     @if (loading) {
-      @for (placeholder of placeholders; track placeholder) {
+      @for (placeholder of placeholders; track $index) {
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card mb-3">
             <div class="card-body">
