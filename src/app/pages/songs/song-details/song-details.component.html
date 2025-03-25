@@ -12,26 +12,44 @@
 
 @if (song && artist) {
   <div class="container-fluid" style="margin-top: 80px;">
-    <p>{{ song.title }} ({{ artist.name }})</p>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <h5>{{ song.title }} ({{ artist.name }})</h5>
 
-    <p>
-      @for (genre of song.genre; track genre) {
-        # {{ genre }}
-      }
-    </p>
+        <div class="img-container mb-3">
+          <img [ngSrc]="song.poster" class="card-img" alt="" fill priority />
+        </div>
 
-    <p>Género:</p>
+        <h6>
+          @for (genre of song.genre; track genre) {
+            # {{ genre }}
+          }
+        </h6>
 
-    @for (genre of song.genre; track genre) {
-      {{ genre }}
-    }
+        <p class="text-muted">Género</p>
 
-    <p>Compañía discográfica</p>
-    <p>compañia</p>
+        <p>
+          @for (genre of song.genre; track genre) {
+            <span class="badge rounded-pill text-bg-secondary me-3">
+              {{ genre }}
+            </span>
+          }
+        </p>
+
+        <p>Compañía discográfica</p>
+        <p class="badge rounded-pill text-bg-secondary">{{ company?.name }}</p>
+
+        <p>País</p>
+        <p class="border-bottom">{{ company?.country }}</p>
 
 
-    <p>Año</p>
-    <p>{{ song.year }}</p>
+        <p>Año</p>
+        <p class="border-bottom">{{ song.year }}</p>
+
+        <p>Puntuación</p>
+        <p class="border-bottom">{{ song.rating }}</p>
+      </div>
+    </div>
 
     <div class="position-fixed bottom-0 end-0 mb-3 me-3">
       <div>
