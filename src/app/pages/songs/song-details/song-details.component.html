@@ -48,9 +48,15 @@
 }
 
 @if (loading) {
-  <p>Cargando...</p>
+  <div class="d-flex justify-content-center mt-5">
+    <div class="spinner-border mt-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
 }
 
 @if (error) {
-  <p>Ocurrió un error</p>
+  <div class="container-fluid" style="margin-top: 80px;">
+    <p>Ocurrió un error :(</p>
+  </div>
 }

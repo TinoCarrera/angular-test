@@ -14,7 +14,7 @@
   <div class="row">
     @for (song of songs; track song.id) {
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="card">
+        <div class="card mb-3">
           <div [routerLink]="['/songs/', song.id]" class="card-body">
             <h5 class="card-title">{{ song.title }}</h5>
 
@@ -35,6 +35,38 @@
         </div>
       </div>
     }
+
+    @if (loading) {
+      @for (placeholder of placeholders; track placeholder) {
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+
+              <h5 class="card-subtitle mb-2 placeholder-glow">
+                <span class="placeholder col-5"></span>
+              </h5>
+
+              <img
+                src="/assets/img/placeholder_400_600.png"
+                class="card-img-top"
+                alt="..."
+                width="100%"
+                height="300"
+              />
+
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-2 me-1"></span>
+                <span class="placeholder col-2 me-1"></span>
+                <span class="placeholder col-2"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    }
   </div>
 
   <div class="position-fixed bottom-0 end-0 mb-3 me-3">
@@ -45,12 +77,8 @@
       <img src="/assets/icons/add.svg" alt="" />
     </button>
   </div>
+
+  @if (error) {
+    <p>Ocurrió un error :(</p>
+  }
 </div>
-
-@if (loading) {
-  <p>Cargando...</p>
-}
-
-@if (error) {
-  <p>Ocurrió un error</p>
-}

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   artists: Artist[] = [];
   loading = true;
   error = false;
+  placeholders = Array.from({ length: 10 });
 
   private songsService = inject(SongsService);
   private artistService = inject(ArtistsService);
