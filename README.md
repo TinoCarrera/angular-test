@@ -26,3 +26,6 @@ El -g sirve para agregarlo de manera global.
 
 Ejecutar el comando `npm start` para ejecutar el proyecto en modo Desarrollo. Ingresa a `http://localhost:4200/`. La aplicación se recargará automáticamente si se cambia alguno de los archivos.
 
+### Json-server
+
+Ejecutar el comando `npm run start:api` para ejecutar el servidor que estará operando en la ruta `http://localhost:3000/`.
