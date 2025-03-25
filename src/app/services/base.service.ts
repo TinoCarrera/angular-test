@@ -9,8 +9,8 @@ export class BaseService {
   baseUrl!: string;
   http = inject(HttpClient);
 
-  getAll(params: any = {}) {
-    return this.http.get<any[]>(this.baseUrl, { params }).pipe(delay(400));
+  getAll() {
+    return this.http.get<any[]>(this.baseUrl).pipe(delay(400));
   }
 
   get(id: string | number) {

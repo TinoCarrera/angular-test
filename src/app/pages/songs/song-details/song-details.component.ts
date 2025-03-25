@@ -61,14 +61,10 @@ export class SongDetailsComponent implements OnInit {
   }
 
   getCompany() {
-    this.companiesService.getAll({ 'songs[0]': this.song!.id }).subscribe({
+    this.companiesService.getAll().subscribe({
       next: (companies: Company[]) => {
-        if (companies.length === 0 || companies[0].songs.length === 0) {
-          this.loading = false;
-          return;
-        }
-
-        this.company = companies[0];
+        const id = Number(this.song!.id);
+        this.company = companies.find((company) => company.songs.includes(id));
         this.loading = false;
       },
       error: () => {
