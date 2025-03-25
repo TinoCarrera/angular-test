@@ -7,11 +7,12 @@ import { Artist } from '../../../models/artist.model';
 import { Company } from '../../../models/company.model';
 import { CompaniesService } from '../../../services/companies.service';
 import { NgOptimizedImage } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-song-details',
   standalone: true,
-  imports: [RouterLink, NgOptimizedImage],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe],
   templateUrl: './song-details.component.html',
   styleUrl: './song-details.component.scss'
 })

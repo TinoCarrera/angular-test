@@ -40,7 +40,11 @@
         <p class="badge rounded-pill text-bg-secondary">{{ company?.name ?? 'N/A' }}</p>
 
         <p>País</p>
-        <p class="border-bottom">{{ company?.country ?? 'N/A' }}</p>
+        @if (company) {
+          <p class="border-bottom">{{ company.country | translate }}</p>
+        } @else {
+          <p class="border-bottom">N/A</p>
+        }
 
 
         <p>Año</p>
