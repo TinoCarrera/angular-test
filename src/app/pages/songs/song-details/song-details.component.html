@@ -37,10 +37,10 @@
         </p>
 
         <p>Compañía discográfica</p>
-        <p class="badge rounded-pill text-bg-secondary">{{ company?.name }}</p>
+        <p class="badge rounded-pill text-bg-secondary">{{ company?.name ?? 'N/A' }}</p>
 
         <p>País</p>
-        <p class="border-bottom">{{ company?.country }}</p>
+        <p class="border-bottom">{{ company?.country ?? 'N/A' }}</p>
 
 
         <p>Año</p>
