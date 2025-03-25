@@ -4,6 +4,7 @@ import { Song } from '../../../models/song.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArtistsService } from '../../../services/artists.service';
 import { Artist } from '../../../models/artist.model';
+import { Company } from '../../../models/company.model';
 
 @Component({
   selector: 'app-song-details',
@@ -15,6 +16,7 @@ import { Artist } from '../../../models/artist.model';
 export class SongDetailsComponent implements OnInit {
   song?: Song;
   artist?: Artist;
+  company?: Company;
   loading = true;
   error = false;
 
